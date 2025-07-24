@@ -3,19 +3,16 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoDotFill } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
-
-import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
+import { Stacked, Pie, Button, LineChart, SparkLine } from '../components/Charts';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
-
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
     <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color: (currentMode === 'Dark') && 'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
   </div>
 );
-
 const Ecommerce = () => {
   const { currentColor, currentMode } = useStateContext();
 
@@ -51,8 +48,7 @@ const Ecommerce = () => {
               <button
                 type="button"
                 style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
-              >
+                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl">
                 {item.icon}
               </button>
               <p className="mt-3">
@@ -66,7 +62,6 @@ const Ecommerce = () => {
           ))}
         </div>
       </div>
-
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
           <div className="flex justify-between">
@@ -99,10 +94,8 @@ const Ecommerce = () => {
               </div>
               <div className="mt-8">
                 <p className="text-3xl font-semibold">$48,487</p>
-
                 <p className="text-gray-500 mt-1">Expense</p>
               </div>
-
               <div className="mt-5">
                 <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
               </div>
@@ -123,35 +116,29 @@ const Ecommerce = () => {
         <div>
           <div
             className=" rounded-2xl md:w-400 p-4 m-3"
-            style={{ backgroundColor: currentColor }}
-          >
+            style={{ backgroundColor: currentColor }} >
             <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl">Earnings</p>
-
               <div>
                 <p className="text-2xl text-white font-semibold mt-8">$63,448.78</p>
                 <p className="text-gray-200">Monthly revenue</p>
               </div>
             </div>
-
             <div className="mt-4">
               <SparkLine currentColor={currentColor} id="column-sparkLine" height="100px" type="Column" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
             </div>
           </div>
-
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
             <div>
               <p className="text-2xl font-semibold ">$43,246</p>
               <p className="text-gray-400">Yearly sales</p>
             </div>
-
             <div className="w-40">
               <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" />
             </div>
           </div>
         </div>
       </div>
-
       <div className="flex gap-10 m-4 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
           <div className="flex justify-between items-center gap-2">
@@ -187,10 +174,8 @@ const Ecommerce = () => {
                 color="white"
                 bgColor={currentColor}
                 text="Add"
-                borderRadius="10px"
-              />
+                borderRadius="10px"/>
             </div>
-
             <p className="text-gray-400 text-sm">36 Recent Transactions</p>
           </div>
         </div>
@@ -204,7 +189,6 @@ const Ecommerce = () => {
           </div>
         </div>
       </div>
-
       <div className="flex flex-wrap justify-center">
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
@@ -213,7 +197,6 @@ const Ecommerce = () => {
               <IoIosMore />
             </button>
           </div>
-
           <div className="mt-10 ">
             {weeklyStats.map((item) => (
               <div key={item.title} className="flex justify-between mt-4 w-full">
@@ -221,8 +204,7 @@ const Ecommerce = () => {
                   <button
                     type="button"
                     style={{ background: item.iconBg }}
-                    className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3"
-                  >
+                    className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3">
                     {item.icon}
                   </button>
                   <div>
@@ -230,7 +212,6 @@ const Ecommerce = () => {
                     <p className="text-sm text-gray-400">{item.desc}</p>
                   </div>
                 </div>
-
                 <p className={`text-${item.pcColor}`}>{item.amount}</p>
               </div>
             ))}
@@ -238,7 +219,6 @@ const Ecommerce = () => {
               <SparkLine currentColor={currentColor} id="area-sparkLine" height="160px" type="Area" data={SparklineAreaData} width="320" color="rgb(242, 252, 253)" />
             </div>
           </div>
-
         </div>
         <div className="w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
           <div className="flex justify-between">
@@ -250,7 +230,6 @@ const Ecommerce = () => {
           <p className="text-xs cursor-pointer hover:drop-shadow-xl font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-gray-200 mt-10">
             16 APR, 2021
           </p>
-
           <div className="flex gap-4 border-b-1 border-color mt-6">
             {medicalproBranding.data.map((item) => (
               <div key={item.title} className="border-r-1 border-color pr-4 pb-2">
@@ -261,7 +240,6 @@ const Ecommerce = () => {
           </div>
           <div className="border-b-1 border-color pb-4 mt-2">
             <p className="text-md font-semibold mb-2">Teams</p>
-
             <div className="flex gap-4">
               {medicalproBranding.teams.map((item) => (
                 <p
@@ -291,7 +269,6 @@ const Ecommerce = () => {
                 borderRadius="10px"
               />
             </div>
-
             <p className="text-gray-400 text-sm">36 Recent Transactions</p>
           </div>
         </div>

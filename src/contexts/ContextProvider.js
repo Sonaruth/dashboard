@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 
 export const StateContext = createContext();
 
@@ -27,10 +27,37 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem('colorMode', color);
   };
 
-  const handleClick = (clicked) => setIsClicked({ ...initialState, [clicked]: true });
+  const handleClick = (clicked) =>
+    setIsClicked({ ...initialState, [clicked]: true });
+
+  const contextValue = useMemo(() => ({
+    currentColor,
+    currentMode,
+    activeMenu,
+    screenSize,
+    setScreenSize,
+    handleClick,
+    isClicked,
+    initialState,
+    setIsClicked,
+    setActiveMenu,
+    setCurrentColor,
+    setCurrentMode,
+    setMode,
+    setColor,
+    themeSettings,
+    setThemeSettings,
+  }), [
+    currentColor,
+    currentMode,
+    activeMenu,
+    screenSize,
+    isClicked,
+    themeSettings
+  ]);
 
   return (
-    <StateContext.Provider value={{ currentColor, currentMode, activeMenu, screenSize, setScreenSize, handleClick, isClicked, initialState, setIsClicked, setActiveMenu, setCurrentColor, setCurrentMode, setMode, setColor, themeSettings, setThemeSettings }}>
+    <StateContext.Provider value={contextValue}>
       {children}
     </StateContext.Provider>
   );

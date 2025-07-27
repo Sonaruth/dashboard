@@ -3,7 +3,7 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoDotFill } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
-import { Stacked, Pie, Button, LineChart, SparkLine } from '../components/Charts';
+import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
@@ -48,7 +48,8 @@ const Ecommerce = () => {
               <button
                 type="button"
                 style={{ color: item.iconColor, backgroundColor: item.iconBg }}
-                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl">
+                className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl"
+              >
                 {item.icon}
               </button>
               <p className="mt-3">
@@ -116,7 +117,8 @@ const Ecommerce = () => {
         <div>
           <div
             className=" rounded-2xl md:w-400 p-4 m-3"
-            style={{ backgroundColor: currentColor }} >
+            style={{ backgroundColor: currentColor }}
+          >
             <div className="flex justify-between items-center ">
               <p className="font-semibold text-white text-2xl">Earnings</p>
               <div>
@@ -174,7 +176,8 @@ const Ecommerce = () => {
                 color="white"
                 bgColor={currentColor}
                 text="Add"
-                borderRadius="10px"/>
+                borderRadius="10px"
+              />
             </div>
             <p className="text-gray-400 text-sm">36 Recent Transactions</p>
           </div>
@@ -204,7 +207,8 @@ const Ecommerce = () => {
                   <button
                     type="button"
                     style={{ background: item.iconBg }}
-                    className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3">
+                    className="text-2xl hover:drop-shadow-xl text-white rounded-full p-3"
+                  >
                     {item.icon}
                   </button>
                   <div>

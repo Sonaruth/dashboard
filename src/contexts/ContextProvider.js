@@ -27,8 +27,7 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem('colorMode', color);
   };
 
-  const handleClick = (clicked) =>
-    setIsClicked({ ...initialState, [clicked]: true });
+  const handleClick = (clicked) => setIsClicked({ ...initialState, [clicked]: true });
 
   const contextValue = useMemo(() => ({
     currentColor,
@@ -53,7 +52,7 @@ export const ContextProvider = ({ children }) => {
     activeMenu,
     screenSize,
     isClicked,
-    themeSettings
+    themeSettings,
   ]);
 
   return (
